@@ -201,11 +201,14 @@ input:checked + .slider:before {
     margin: 50px auto 5px;
 }
 
+.userName{
+    grid-column: span 4;
+}
 .firstName {
-    grid-column: 1 / span 6;
+    grid-column: span 4;
 }
 .lastName{
-    grid-column:  7/ span 6;
+    grid-column:  span 4;
     border-right: none !important;
 }
 .phoneNumber{
