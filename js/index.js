@@ -17,16 +17,15 @@ let submit = document.getElementById("submit");
 
 email.disabled = true;
 
-// console.log(countryData , statesData , cityData);
-
-let validateFirstName = (e)=>{
+let validateFirstName = (target)=>{
     let regex = /[^A-z]/;
-    let txt = e.target.value;
+    let txt = target.value;
+    // console.log("target: " , target);
     let result = regex.test(txt);
     if (result == true) {
-        e.target.style.border = "1px solid red";
+        target.style.border = "1px solid red";
     } else {
-        e.target.style.border = "0.5px inset rgb(118, 118, 118)";
+        target.style.border = "0.5px inset rgb(118, 118, 118)";
     }
     return result;
 }
@@ -154,10 +153,10 @@ let isEmailDataFilled = ()=>{
 
 
 firstName.addEventListener("keyup",(e)=>{
-    let result = validateFirstName(e);
+    let result = validateFirstName(e.target);
 });
 firstName.addEventListener("change",(e)=>{
-    let result = validateFirstName(e);
+    let result = validateFirstName(e.target);
     if(result==true){
         window.alert("Only alhabets are allowed in First Name Field");
         firstName.focus();
@@ -166,10 +165,10 @@ firstName.addEventListener("change",(e)=>{
 
 lastName.addEventListener("keyup" , (e)=>{
     // let result = validateLastName(e);
-    let result = validateFirstName(e);
+    let result = validateFirstName(e.target);
 });
 lastName.addEventListener("change",(e)=>{
-    let result = validateFirstName(e);
+    let result = validateFirstName(e.target);
     if(result==true){
         window.alert("Only alhabets are allowed in Last Name Field");
         e.target.focus();
