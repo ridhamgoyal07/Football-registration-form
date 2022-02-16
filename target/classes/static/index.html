@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Football Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Linking css file  -->
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <div id="outerBox">
+        <h1>Football Registration Form</h1>
+        <form id="formBox" autocomplete="off">
+            <div class="userName">
+                <div class="userButton">
+                    <label for="userName">Username <span class="required">*</span></label>
+                    <button id="receiveDataButton" name="receiveDataButton" disabled="true">Receive Data</button>
+                </div>
+                <input type="text" name="userName" id="userName" placeholder="Write your user name?" required />
+            </div>
+            <div class="firstName">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" name="firstName" id="firstName" placeholder="What is your first name?"  autofocus required />
+            </div>
+            <div class="lastName">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" placeholder="What is your last name?" />
+            </div>
+            <div class="phoneNumber">
+                <label for="phoneNumber">Phone number <span class="required">*</span></label>
+                <div class="inputGroup">
+                    <select name="countryCode" id="countryCode">
+                        <option value="+91" selected>+91</option>
+                        <option value="+47">+47</option>
+                        <option value="+45">+45</option>
+                        <option value="+46">+46</option>
+                    </select>
+                    <input type="tel" name="phoneNumber" id="phoneNumber"
+                        placeholder="What is the best # to reach you?"  maxlength="10" minlength="10" required/>
+                </div>
+
+            </div>
+            <div class="email">
+                <div class="emailSwitch">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <label class="switch">
+                        <input type="checkbox"  name="switchEmail" id="switchEmail" required>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <input type="email" name="email" id="email" placeholder="What is your e-mail address?"  required />
+            </div>
+            <div class="age">
+                <label for="ageGroup">Age Group<span class="required">*</span></label>
+                <select name="ageGroup" id="ageGroup" required>
+                    <option value="">Select Your Age Group</option>
+                    <option value="20-23 years">20 - 23 year</option>
+                    <option value="24-27 years">24 - 27 year</option>
+                    <option value="28-31 years">28 - 31 year</option>
+                    <option value="32-35 years">32 - 35 year</option>
+                </select>
+            </div>
+            <div class="desiredTeam">
+                <label for="desiredTeam">Desired Team<span class="required">*</span></label>
+                <div class="radioOption">
+                    <input type="radio" name="team" id="chelsea" value="Chelsea" />
+                    <label for="chelsea">Chelsea</label>
+                </div>
+                <div class="radioOption">
+                    <input type="radio" name="team" id="liverpool" value="liverpool" />
+                    <label for="liverpool">Liverpool</label>
+                </div>
+                <div class="radioOption">
+                    <input type="radio" name="team" id="manchaster-united" value="manchaster-united" />
+                    <label for="manchaster-united">manchaster-united</label>
+                </div>
+                <div class="radioOption">
+                    <input type="radio" name="team" id="barcelona" value="barcelona" />
+                    <label for="barcelona">barcelona</label>
+                </div>
+            </div>
+            <div class="desiredPosition">
+                <label for="desiredPosition">Desired Position<span class="required">*</span></label>
+                <div class="checkBoxOption">
+                    <input type="checkbox" name="position" id="goalKeeper" value="goalKeeper" />
+                    <label for="goalKeeper">Goal Keeper</label>
+                </div>
+                <div class="checkBoxOption">
+                    <input type="checkbox" name="position" id="ofensive" value="ofensive" />
+                    <label for="ofensive">ofensive</label>
+                </div>
+                <div class="checkBoxOption">
+                    <input type="checkbox" name="position" id="defence" value="defence" />
+                    <label for="defence">defence</label>
+                </div>
+                <div class="checkBoxOption">
+                    <input type="checkbox" name="position" id="receiver" value="receiver" />
+                    <label for="receiver">receiver</label>
+                </div>
+            </div>
+            <div class="address">
+                <label for="address">Address</label>
+                <textarea name="address" id="address" rows="8" placeholder="Enter your address here! "></textarea>
+            </div>
+            <div class="pincode" id="PinCode">
+                <label for="pincode">Pin Code<span class="required">*</span></label>
+                <input type="number" step="1" placeholder="Enter your Pincode!" name="pincode" id="pincode" maxlength="6" minlength="6" min="100000" max="999999">
+            </div>
+            <div class="mainAddress" id="mainAddress">
+                <label for="country"> Country <span class="required">*</span></label>
+                <select id="country" name="country" required>
+                    <option value="">Select Your Country</option>  
+                </select>
+                <label for="state"> State <span class="required">*</span></label>
+                <select id="state" name="state" required>
+                    <option value="">Select your State</option>
+                </select>
+                <label for="city"> City <span class="required">*</span></label>
+                <select id="city" name="city" required>
+                    <option value="">Select Your City</option>
+                </select>
+
+                <button type="submit" class="button" id="submit">Phewww! Let's Submit it</button>
+                <button type="submit" class="updateButton" id="updateButton">Update Data !!</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+    <!-- Embedding javascript file -->
+    <script src="./js/restapi.js"></script>
+    <script  src="./js/countryDummyData.js"></script>
+    <script  src="./js/index.js"></script>
+</body>
+
+</html>
